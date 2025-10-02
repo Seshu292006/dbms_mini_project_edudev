@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #b7eaff 0%, #e0c3fc 100%);
+            overflow: hidden;
+        }
+        /* Bubbles */
+        .bubbles {
+            position: fixed;
+            bottom: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: slideup 12s infinite;
+        }
+        .bubble1 { width: 80px; height: 80px; left: 10%; bottom: 10%; background: #a3e4d7; animation-delay: 0s;}
+        .bubble2 { width: 120px; height: 120px; left: 70%; bottom: 20%; background: #f9e79f; animation-delay: 2s;}
+        .bubble3 { width: 60px; height: 60px; left: 50%; bottom: 5%; background: #f5b7b1; animation-delay: 4s;}
+        .bubble4 { width: 100px; height: 100px; left: 80%; bottom: 30%; background: #d2b4de; animation-delay: 6s;}
+        .bubble5 { width: 90px; height: 90px; left: 20%; bottom: 25%; background: #aed6f1; animation-delay: 8s;}
+        @keyframes slideup {
+            0% { transform: translateY(0) scale(1);}
+            50% { transform: translateY(-60vh) scale(1.1);}
+            100% { transform: translateY(0) scale(1);}
+        }
+        /* Mountains and forest */
+        .mountains {
+            position: fixed;
+            bottom: 0; left: 0; width: 100vw; height: 30vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+        /* Login box */
+        .login-box {
+            position: relative;
+            z-index: 2;
+            margin: 7vh auto 0 auto;
+            width: 350px;
+            background: rgba(255,255,255,0.85);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 2.5rem 2rem 2rem 2rem;
+            animation: floatbox 2.5s cubic-bezier(.68,-0.55,.27,1.55) infinite alternate;
+        }
+        @keyframes floatbox {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-12px);}
+        }
+        .login-box h2 {
+            text-align: center;
+            color: #4a6c4a;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #4a6c4a;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            background: #f8fafd;
+            font-size: 1rem;
+            transition: border 0.2s;
+        }
+        input:focus {
+            border-color: #81c784;
+            outline: none;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.7rem;
+            background: linear-gradient(90deg, #81c784 0%, #aed581 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #66bb6a 0%, #9ccc65 100%);
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            border-radius: 6px;
+            padding: 0.6rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #4a6c4a;
+            text-decoration: underline;
+            font-size: 1rem;
+            z-index: 2;
+            position: relative;
+        }
+        @media (max-width: 500px) {
+            .login-box { width: 95vw; padding: 1.2rem;}
+        }
+    </style>
+</head>
+<body>
+    <div class="bubbles">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+        <div class="bubble bubble5"></div>
+    </div>
+    <svg class="mountains" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <defs>
+            <linearGradient id="mountainGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a5d6a7"/>
+                <stop offset="100%" stop-color="#388e3c"/>
+            </linearGradient>
+        </defs>
+        <path fill="url(#mountainGradient)" fill-opacity="1" d="M0,288L80,272C160,256,320,224,480,197.3C640,171,800,149,960,154.7C1120,160,1280,192,1360,208L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+        <ellipse cx="200" cy="270" rx="40" ry="18" fill="#689f38" opacity="0.7"/>
+        <ellipse cx="400" cy="260" rx="30" ry="12" fill="#558b2f" opacity="0.7"/>
+        <ellipse cx="1200" cy="280" rx="50" ry="20" fill="#689f38" opacity="0.7"/>
+        <ellipse cx="1000" cy="250" rx="35" ry="15" fill="#558b2f" opacity="0.7"/>
+    </svg>
+    <div class="login-box">
+        <form action="{{ url_for('login') }}" method="post" class="login-form">
+            <h2>Login</h2>
+            {% if error %}
+                <div class="error">{{ error }}</div>
+            {% endif %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <a class="login-link" href="/register">Don't have an account? Register</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EduDev - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f4f8fb; }
+        header { background: #2d6cdf; color: #fff; padding: 30px 0; text-align: center; }
+        nav { background: #fff; padding: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+        nav a { color: #2d6cdf; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);}
+        h1 { margin-bottom: 10px; }
+        .features { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px;}
+        .feature { flex: 1 1 250px; background: #f0f5ff; padding: 20px; border-radius: 6px; text-align: center;}
+        .feature h3 { color: #2d6cdf; }
+        footer { text-align: center; padding: 20px 0; background: #e9eef6; color: #555; margin-top: 40px;}
+        @media (max-width: 700px) {
+            .features { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduDev</h1>
+        <p>Empowering Education Through Technology</p>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/courses">Courses</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <div class="container">
+        <h2>Welcome to EduDev!</h2>
+        <p>
+            EduDev is dedicated to providing high-quality educational resources and development tools for learners and educators worldwide.
+            Explore our interactive courses, join our community, and take your learning journey to the next level.
+        </p>
+        <div class="features">
+            <div class="feature">
+                <h3>Interactive Courses</h3>
+                <p>Engage with hands-on lessons and real-world projects in various subjects.</p>
+            </div>
+            <div class="feature">
+                <h3>Expert Instructors</h3>
+                <p>Learn from experienced educators and industry professionals.</p>
+            </div>
+            <div class="feature">
+                <h3>Community Support</h3>
+                <p>Join forums, ask questions, and collaborate with fellow learners.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; {{ year }} EduDev. All rights reserved.
+    </footer>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #f8e1f4 0%, #e0f7fa 100%);
+        min-height: 100vh;
+    }
+    header {
+        background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+        color: #3d3d3d;
+        padding: 40px 0 20px 0;
+        text-align: center;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        box-shadow: 0 4px 16px rgba(161,196,253,0.15);
+    }
+    header h1 {
+        font-size: 2.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+    header p {
+        font-size: 1.2rem;
+        color: #5e60ce;
+        margin: 0;
+    }
+    nav {
+        background: #fff;
+        padding: 18px 0;
+        box-shadow: 0 2px 8px rgba(161,196,253,0.10);
+        border-radius: 0 0 24px 24px;
+        margin-bottom: 24px;
+    }
+    nav a {
+        color: #5e60ce;
+        margin: 0 22px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.08rem;
+        transition: color 0.2s;
+        border-bottom: 2px solid transparent;
+        padding-bottom: 3px;
+    }
+    nav a:hover {
+        color: #f48fb1;
+        border-bottom: 2px solid #f48fb1;
+    }
+    .container {
+        max-width: 950px;
+        margin: 48px auto;
+        background: rgba(255,255,255,0.95);
+        padding: 38px 32px;
+        border-radius: 18px;
+        box-shadow: 0 6px 24px rgba(244,143,177,0.10);
+        position: relative;
+        z-index: 1;
+    }
+    h2 {
+        color: #5e60ce;
+        margin-bottom: 18px;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        margin-top: 36px;
+        justify-content: center;
+    }
+    .feature {
+        flex: 1 1 260px;
+        background: linear-gradient(120deg, #f8bbd0 0%, #b2ebf2 100%);
+        padding: 28px 18px 18px 18px;
+        border-radius: 14px;
+        text-align: center;
+        box-shadow: 0 2px 12px rgba(161,196,253,0.10);
+        position: relative;
+        min-width: 240px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(244,143,177,0.18);
+    }
+    .feature h3 {
+        color: #5e60ce;
+        margin-bottom: 10px;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .feature img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(161,196,253,0.13);
+        background: #fff;
+        padding: 6px;
+    }
+    footer {
+        text-align: center;
+        padding: 22px 0;
+        background: linear-gradient(90deg, #f8bbd0 0%, #b2ebf2 100%);
+        color: #5e60ce;
+        margin-top: 48px;
+        font-size: 1.05rem;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        box-shadow: 0 -2px 12px rgba(244,143,177,0.10);
+    }
+    @media (max-width: 900px) {
+        .container { padding: 24px 8px; }
+        .features { gap: 18px; }
+    }
+    @media (max-width: 700px) {
+        .features { flex-direction: column; }
+        .feature { min-width: 0; }
+        header { padding: 28px 0 12px 0; }
+    }
+</style>
+<script>
+    // Optional: Add a little animation on page load
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll('.feature').forEach(function(el, i) {
+            el.style.opacity = 0;
+            el.style.transform = "translateY(30px)";
+            setTimeout(function() {
+                el.style.transition = "all 0.7s cubic-bezier(.68,-0.55,.27,1.55)";
+                el.style.opacity = 1;
+                el.style.transform = "translateY(0)";
+            }, 200 + i * 180);
+        });
+    });
+</script>
+<!-- Book images for features -->
+<style>
+    .feature img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script>
+    // No extra JS needed for images
+</script>
+<!-- Add book images to features -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = [
+            "https://img.icons8.com/color/96/000000/book-shelf.png",
+            "https://img.icons8.com/color/96/000000/reading.png",
+            "https://img.icons8.com/color/96/000000/books.png"
+        ];
+        document.querySelectorAll('.feature').forEach(function(el, i) {
+            if (images[i]) {
+                const img = document.createElement('img');
+                img.src = images[i];
+                img.alt = "Book illustration";
+                el.insertBefore(img, el.firstChild);
+            }
+        });
+    });
+</script>

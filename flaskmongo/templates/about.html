@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About | EduDev</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fceabb 0%, #f8b6d2 100%);
+            min-height: 100vh;
+            transition: background 0.6s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 48px auto;
+            background: rgba(255,255,255,0.85);
+            padding: 36px 40px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(120, 120, 180, 0.13), 0 1.5px 8px rgba(255, 182, 193, 0.10);
+            animation: fadeIn 1.2s;
+        }
+        h1, h2 {
+            color: #7b9acc;
+            text-shadow: 0 2px 8px #f8b6d2a0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5em;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        p, li {
+            color: #5a5a6e;
+            line-height: 1.8;
+            font-size: 1.08rem;
+        }
+        .highlight {
+            color: #f8b6d2;
+            font-weight: bold;
+            background: #fff6fa;
+            padding: 2px 8px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px #f8b6d230;
+            transition: background 0.3s;
+        }
+        ul {
+            margin: 1em 0 2em 1.5em;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 0.5em;
+            background: #e3f6fd;
+            border-radius: 6px;
+            padding: 6px 14px;
+            box-shadow: 0 1px 4px #b2e0f7a0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        li:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 16px #b2e0f7a0;
+            background: #fceabb;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .container:hover {
+            box-shadow: 0 12px 40px #f8b6d2a0, 0 2px 12px #b2e0f7a0;
+            transition: box-shadow 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About EduDev</h1>
+        <p>
+            <span class="highlight">EduDev</span> is an innovative education platform dedicated to empowering learners and educators worldwide. Our mission is to make high-quality learning resources accessible, interactive, and engaging for everyone.
+        </p>
+        <p>
+            Whether you're a student seeking to expand your knowledge, a teacher looking for effective tools, or a lifelong learner, EduDev provides a collaborative environment to help you achieve your goals.
+        </p>
+        <h2>Our Vision</h2>
+        <p>
+            We believe in the power of technology to transform education. EduDev strives to bridge gaps in learning by offering personalized content, community-driven support, and hands-on experiences.
+        </p>
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Interactive courses and tutorials</li>
+            <li>Community forums and peer support</li>
+            <li>Progress tracking and personalized recommendations</li>
+            <li>Resources for educators and institutions</li>
+        </ul>
+        <p>
+            Join us on our journey to make education accessible, enjoyable, and effective for all!
+        </p>
+    </div>
+</body>
+</html>

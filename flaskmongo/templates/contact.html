@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us | EduDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fceabb 0%, #f8bfae 100%);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #444;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff8f0cc;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(100, 100, 100, 0.12);
+            padding: 40px 30px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-form {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .contact-form h2 {
+            color: #a18cd1;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            letter-spacing: 1px;
+        }
+        .contact-form label {
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #7f7fd5;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            border: none;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+            background: #f7e9f0;
+            margin-bottom: 10px;
+            transition: box-shadow 0.2s;
+            box-shadow: 0 2px 8px #f8bfae33;
+            resize: none;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #a18cd1;
+        }
+        .contact-form button {
+            background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px #a18cd133;
+        }
+        .contact-form button:hover {
+            background: linear-gradient(90deg, #fbc2eb 0%, #a18cd1 100%);
+        }
+        .map-section {
+            flex: 1 1 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+        .map-section h3 {
+            color: #f8bfae;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        .address {
+            background: #f7e9f0;
+            border-radius: 8px;
+            padding: 12px 18px;
+            color: #7f7fd5;
+            font-weight: 500;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 8px #f8bfae33;
+        }
+        .map-embed {
+            width: 100%;
+            max-width: 350px;
+            height: 220px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px #a18cd133;
+            background: #eee;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 24px 10px;
+            }
+            .map-section, .contact-form {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="contact-form" method="POST" action="{{ url_for('contact') }}">
+            <h2>Contact EduDev</h2>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="map-section">
+            <h3>Our Address</h3>
+            <div class="address">
+                EduDev HQ<br>
+                123 Pastel Avenue,<br>
+                Dream City, 45678<br>
+                Country
+            </div>
+            <iframe
+                class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.95373631531697!3d-37.81627917975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f1f1f1%3A0x5045675218ce6e0!2sFake%20Address!5e0!3m2!1sen!2sus!4v1710000000000"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="EduDev Location"></iframe>
+        </div>
+    </div>
+</body>
+</html>

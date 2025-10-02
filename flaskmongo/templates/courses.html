@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Courses | EduDev</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #fceabb 0%, #f8bfae 100%);
+            min-height: 100vh;
+            color: #444;
+        }
+        header {
+            background: rgba(255,255,255,0.7);
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(200,180,200,0.08);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #6c63ff;
+            letter-spacing: 2px;
+        }
+        header p {
+            color: #a78bfa;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .courses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+        .course-card {
+            background: rgba(255,255,255,0.85);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(180,180,200,0.12);
+            width: 300px;
+            padding: 2rem 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .course-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(140,140,180,0.18);
+        }
+        .course-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #a78bfa;
+        }
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #6c63ff;
+            margin-bottom: 0.5rem;
+        }
+        .course-desc {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .course-link {
+            background: #a78bfa;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+        .course-link:hover {
+            background: #6c63ff;
+        }
+        @media (max-width: 900px) {
+            .courses-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EduDev Courses</h1>
+        <p>Learn programming languages with our beginner-friendly tutorials</p>
+    </header>
+    <main>
+        <section class="courses-container">
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <div class="course-title">Python</div>
+                <div class="course-desc">Start your programming journey with Python. Easy to learn, powerful to use.</div>
+                <a class="course-link" href="#">View Python Tutorial</a>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🌐</div>
+                <div class="course-title">JavaScript</div>
+                <div class="course-desc">Master the language of the web. Build interactive websites and apps.</div>
+                <a class="course-link" href="#">View JavaScript Tutorial</a>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">☕</div>
+                <div class="course-title">Java</div>
+                <div class="course-desc">Learn Java for robust applications, Android development, and more.</div>
+                <a class="course-link" href="#">View Java Tutorial</a>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🔧</div>
+                <div class="course-title">C++</div>
+                <div class="course-desc">Dive into C++ for high-performance software and game development.</div>
+                <a class="course-link" href="#">View C++ Tutorial</a>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🐘</div>
+                <div class="course-title">PHP</div>
+                <div class="course-desc">Build dynamic websites and backend systems with PHP.</div>
+                <a class="course-link" href="#">View PHP Tutorial</a>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🐍</div>
+                <div class="course-title">Django</div>
+                <div class="course-desc">Develop web apps rapidly with Django, Python’s popular framework.</div>
+                <a class="course-link" href="#">View Django Tutorial</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

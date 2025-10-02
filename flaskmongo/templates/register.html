@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f8e8ff 0%, #e0f7fa 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: 
+            radial-gradient(circle at 20% 30%, rgba(255,255,255,0.5) 0, rgba(255,255,255,0.2) 60px, transparent 100px),
+            radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4) 0, rgba(255,255,255,0.15) 50px, transparent 90px),
+            radial-gradient(circle at 60% 80%, rgba(255,255,255,0.3) 0, rgba(255,255,255,0.1) 40px, transparent 80px),
+            radial-gradient(circle at 40% 60%, rgba(255,255,255,0.25) 0, rgba(255,255,255,0.08) 30px, transparent 60px);
+        }
+        .bubbles {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            bottom: -120px;
+            border-radius: 50%;
+            opacity: 0.35;
+            background: radial-gradient(circle at 60% 40%, #fff 0%, #b3e5fc 100%);
+            animation: rise 10s linear infinite;
+        }
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.35;
+            }
+            80% {
+                opacity: 0.25;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.15);
+                opacity: 0;
+            }
+        }
+        .container {
+            background: #fff;
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 40px 30px 30px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+        h2 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1565c0;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #b3c6e0;
+            border-radius: 6px;
+            background: #f4faff;
+            font-size: 16px;
+            transition: border 0.2s;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+            border: 1.5px solid #1976d2;
+            outline: none;
+            background: #e3f0ff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #1565c0 60%, #1976d2 100%);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 18px;
+            color: #789;
+            font-size: 14px;
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Create Account</h2>
+        <form method="POST" action="/login">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="footer">
+            Already have an account? <a href="/login" style="color:#1976d2;text-decoration:none;">Login</a>
+        </div>
+    </div>
+</body>
+</html>     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const bubbleColors = [
+                "rgba(255,255,255,0.35)",
+                "rgba(179,229,252,0.35)",
+                "rgba(224,247,250,0.25)"
+            ];
+            const bubbles = document.createElement('div');
+            bubbles.className = 'bubbles';
+            document.body.appendChild(bubbles);
+            for (let i = 0; i < 18; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                const size = Math.random() * 48 + 32;
+                bubble.style.width = size + "px";
+                bubble.style.height = size + "px";
+                bubble.style.left = (Math.random() * 100) + "vw";
+                bubble.style.animationDuration = (8 + Math.random() * 6) + "s";
+                bubble.style.animationDelay = (Math.random() * 8) + "s";
+                bubble.style.background = `radial-gradient(circle at 60% 40%, #fff 0%, #b3e5fc 100%)`;
+                bubble.style.opacity = (0.18 + Math.random() * 0.25).toFixed(2);
+                bubbles.appendChild(bubble);
+            }
+        });
+    </script>
+</body>
+<!-- Add a link to login.html in the register page footer -->
+<!-- Add a link to login.html in the register page footer -->
+<style>
+    .container {
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .container:hover {
+        box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.25);
+        transform: translateY(-6px) scale(1.025);
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 32px;
+    }
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #f4faff;
+        box-shadow: 0 2px 8px rgba(31,38,135,0.08);
+        transition: background 0.2s, transform 0.2s;
+        color: #1976d2;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    .social-icons a:hover {
+        background: #1976d2;
+        color: #fff;
+        transform: scale(1.12);
+    }
+</style>
+<script>
+    // Set background image
+    document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+</script>
+<div class="social-icons">
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 186c-39.5 0-71.5-32-71.5-71.5s32-71.5 71.5-71.5 71.5 32 71.5 71.5-32 71.5-71.5 71.5zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.9C388.7 9.9 357.3 1.7 322 0 286.7-1.7 256.3 6.1 230.1 32.4c-26.2 26.2-34 56.6-32.3 91.9 1.7 35.3 9.9 66.7 36.2 92.9 26.2 26.2 56.6 34 91.9 32.3 35.3-1.7 66.7-9.9 92.9-36.2 26.2-26.2 34-56.6 32.3-91.9zm-48.6 218.7c-7.8 19.6-22.9 34.7-42.5 42.5-29.4 11.7-99.2 9-132.4 9s-103 .7-132.4-9c-19.6-7.8-34.7-22.9-42.5-42.5-11.7-29.4-9-99.2-9-132.4s-.7-103 9-132.4c7.8-19.6 22.9-34.7 42.5-42.5C120.8 2.7 190.6 0 224.1 0s103-.7 132.4 9c19.6 7.8 34.7 22.9 42.5 42.5 11.7 29.4 9 99.2 9 132.4s.7 103-9 132.4z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" title="Facebook" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 320 512" fill="currentColor"><path d="M279.14 288l14.22-92.66h-88.91V127.91c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.5 0 225.36 0c-73.22 0-121.09 44.38-121.09 124.72v70.62H22.89V288h81.38v224h100.2V288z"/></svg>
+    </a>
+    <a href="mailto:someone@example.com" title="Mail" aria-label="Mail">
+        <svg width="22" height="22" viewBox="0 0 512 512" fill="currentColor"><path d="M502.3 190.8l-192-160c-21.4-17.8-53.6-17.8-75 0l-192 160C7.1 197.8 0 210.7 0 224.9V464c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V224.9c0-14.2-7.1-27.1-17.7-34.1zM464 464H48V224.9l208-173.3 208 173.3V464z"/></svg>
+    </a>
+</div>
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        window.location.href = "/login";
+    });
+</script>
